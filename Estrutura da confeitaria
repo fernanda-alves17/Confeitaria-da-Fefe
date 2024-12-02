@@ -1,0 +1,61 @@
+class Produto: 
+    def __init__(self,  nome,  preco): 
+        self.nome = nome
+        self.preco = preco
+
+    def __str__(self): 
+        return f"{self.nome} - R$ {self.preco:.2f}"
+
+
+class Pedido: 
+    def __init__(self): 
+        self.itens = []
+
+    def adicionar_item(self,  produto,  quantidade): 
+        self.itens.append({"produto":  produto,  "quantidade":  quantidade})
+
+    def calcular_total(self): 
+        return sum(item["produto"].preco * item["quantidade"] for item in self.itens)
+
+    def exibir_pedido(self): 
+        print("Pedido: ")
+        for item in self.itens: 
+            print(f"{item['quantidade']}x {item['produto'].nome} - R$ {item['produto'].preco * item['quantidade']:.2f}")
+        print(f"Total:  R$ {self.calcular_total(): .2f}")
+
+
+class Confeitaria: 
+    def __init__(self,  nome): 
+        self.nome = nome
+        self.cardapio = []
+
+    def adicionar_produto(self,  produto): 
+        self.cardapio.append(produto)
+
+    def exibir_cardapio(self): 
+        print(f"{self.nome} - Cardápio")
+        for idx,  produto in enumerate(self.cardapio,  1): 
+            print(f"{idx}. {produto}")
+
+    def criar_pedido(self): 
+        return Pedido()
+
+
+# Exemplo de uso
+confeitaria = Confeitaria("Doces da Fefe")
+
+# Adicionando produtos ao cardápio
+confeitaria.adicionar_produto(Produto("Bolo de Chocolate",  25.00))
+confeitaria.adicionar_produto(Produto("Cupcake",  5.50))
+confeitaria.adicionar_produto(Produto("Torta de Limão",  18.00))
+
+# Exibindo o cardápio
+confeitaria.exibir_cardapio()
+
+# Criando um pedido
+pedido = confeitaria.criar_pedido()
+pedido.adicionar_item(confeitaria.cardapio[0],  2)  # 2 Bolos de Chocolate
+pedido.adicionar_item(confeitaria.cardapio[1],  5)  # 5 Cupcakes
+
+# Exibindo o pedido
+pedido.exibir_pedido()
