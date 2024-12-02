@@ -1,0 +1,38 @@
+# Sistema de formas de pagamento
+
+def calcular_pagamento(valor, forma_pagamento):
+    if forma_pagamento == "1":
+        # Pagamento à vista com 10% de desconto
+        desconto = valor * 0.10
+        total = valor - desconto
+        print(f"Pagamento à vista selecionado. Desconto: R${desconto:.2f}")
+        print(f"Total a pagar: R${total:.2f}")
+    
+    elif forma_pagamento == "2":
+        # Pagamento no cartão (sem desconto)
+        print(f"Pagamento no cartão selecionado.")
+        print(f"Total a pagar: R${valor:.2f}")
+    
+    elif forma_pagamento == "3":
+        # Parcelamento em 2 vezes sem juros
+        parcela = valor / 2
+        print(f"Pagamento parcelado em 2 vezes.")
+        print(f"Valor de cada parcela: R${parcela:.2f}")
+        print(f"Total a pagar: R${valor:.2f}")
+    
+    elif forma_pagamento == "4":
+        #Pagemento com pix
+        print(f"Pagamento no pix selecionado.")
+        print(f"Total a pagar: R${valor:.2f}")
+
+# Programa principal
+print("Bem-vindo ao sistema de pagamento!")
+valor = float(input("Digite o valor total: R$"))
+print("Escolha a forma de pagamento:")
+print("1 - À vista (10% de desconto)")
+print("2 - Cartão (sem desconto)")
+print("3 - 2 vezes sem juros")
+print("4 - Pagemento no pix")
+forma_pagamento = input("Digite o número correspondente à forma de pagamento: ")
+
+calcular_pagamento(valor, forma_pagamento)
