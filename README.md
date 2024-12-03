@@ -22,8 +22,12 @@ Sàb - 09:00 ás 12:00
 OBS: Trabalhamos com taxa de entregas de R$2,00!
 
 # Contato
-Email-fer17092006@gmail.com
-Telefone-(41)98538-6779
-Instagram-Confeitaria.docesda_fefe
-Facebook-Confeitaria Doces da Fefe
-Nosso site-www.confeitaria.docesda_fefe.com.br
+Email - fer17092006@gmail.com
+
+Telefone - (41)98538-6779
+
+Instagram - Confeitaria.docesda_fefe
+
+Facebook - Confeitaria Doces da Fefe
+
+Nosso site - www.confeitaria.docesda_fefe.com.br
