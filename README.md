@@ -14,8 +14,11 @@ Nós aqui da Confeitaria Doces da Fefe, trabalhamos com o maior amor e carinho e
 
 # Entegas
 Nosso sistema de entregas funciona:
+
 Seg à Sex - 09:00 ás 17:00
+
 Sàb - 09:00 ás 12:00
+
 OBS: Trabalhamos com taxa de entregas de R$2,00!
 
 # Contato
