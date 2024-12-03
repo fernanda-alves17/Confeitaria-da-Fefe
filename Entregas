@@ -1,0 +1,80 @@
+class Produto: 
+    def __init__(self,  nome,  preco,  descricao): 
+        self.nome = nome
+        self.preco = preco
+        self.descricao = descricao
+
+class Pedido: 
+    def __init__(self,  cliente,  produtos): 
+        self.cliente = cliente
+        self.produtos = produtos
+
+class Confeitaria: 
+    def __init__(self): 
+        self.produtos = []
+        self.pedidos = []
+
+    def adicionar_produto(self,  produto): 
+        self.produtos.append(produto)
+
+    def fazer_pedido(self,  cliente,  produtos): 
+        pedido = Pedido(cliente,  produtos)
+        self.pedidos.append(pedido)
+
+def cadastrar_produto(confeitaria): 
+    nome = input("Nome do produto:  ")
+    preco = float(input("Preço:  "))
+    descricao = input("Descrição:  ")
+    produto = Produto(nome,  preco,  descricao)
+    confeitaria.adicionar_produto(produto)
+
+def fazer_pedido(confeitaria): 
+    cliente = input("Nome do cliente:  ")
+    produtos = []
+    while True: 
+        print("1. Adicionar produto")
+        print("2. Finalizar pedido")
+        escolha = input("Escolha:  ")
+        if escolha == "1": 
+            produto_nome = input("Nome do produto:  ")
+            produto = next((p for p in confeitaria.produtos if p.nome == produto_nome),  None)
+            if produto: 
+                produtos.append(produto)
+            else: 
+                print("Produto não encontrado.")
+        elif escolha == "2": 
+            break
+    confeitaria.fazer_pedido(cliente,  produtos)
+
+def imprimir_pedidos(confeitaria): 
+    print("Pedidos: ")
+    for i,  pedido in enumerate(confeitaria.pedidos): 
+        print(f"Pedido {i+1}: ")
+        print(f"Cliente:  {pedido.cliente}")
+        print("Produtos: ")
+        for produto in pedido.produtos: 
+            print(f"- {produto.nome} (R${produto.preco: .2f})")
+
+def main(): 
+    confeitaria = Confeitaria()
+
+    while True: 
+        print("Confeitaria")
+        print("1. Cadastrar produto")
+        print("2. Fazer pedido")
+        print("3. Imprimir pedidos")
+        print("4. Sair")
+        escolha = input("Escolha:  ")
+        if escolha == "1": 
+            cadastrar_produto(confeitaria)
+        elif escolha == "2": 
+            fazer_pedido(confeitaria)
+        elif escolha == "3": 
+            imprimir_pedidos(confeitaria)
+        elif escolha == "4": 
+            break
+        else: 
+            print("Opção inválida.")
+
+if __name__ == "__main__": 
+    main()
