@@ -22,7 +22,7 @@ Sàb - 09:00 ás 12:00
 OBS: Trabalhamos com taxa de entregas de R$2,00!
 
 # Contato
-Email - fer17092006@gmail.com
+Email - confeitariadocesda.fefe@gmail.com
 
 Telefone - (41)98538-6779
 
