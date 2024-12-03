@@ -1,0 +1,60 @@
+class ConfeitariaMenu: 
+    def __init__(self): 
+        self.menu = {}
+
+    def adicionar_item(self,  nome,  preco): 
+        """Adiciona um item ao cardápio."""
+        if nome in self.menu: 
+            print(f"{nome} já está no cardápio!")
+        else: 
+            self.menu[nome] = preco
+            print(f"{nome} foi adicionado ao cardápio.")
+
+    def remover_item(self,  nome): 
+        """Remove um item do cardápio."""
+        if nome in self.menu: 
+            del self.menu[nome]
+            print(f"{nome} foi removido do cardápio.")
+        else: 
+            print(f"{nome} não está no cardápio.")
+
+    def mostrar_menu(self): 
+        """Exibe o cardápio atual."""
+        if self.menu: 
+            print("\nCardápio da Confeitaria: ")
+            for nome,  preco in self.menu.items(): 
+                print(f"- {nome}:  R${preco: .2f}")
+        else: 
+            print("\nO cardápio está vazio.")
+
+def main(): 
+    confeitaria = ConfeitariaMenu()
+
+    while True: 
+        print("\n=== Menu de Opções ===")
+        print("1. Adicionar item ao cardápio")
+        print("2. Remover item do cardápio")
+        print("3. Mostrar cardápio")
+        print("4. Sair")
+        opcao = input("Escolha uma opção:  ")
+
+        if opcao == '1': 
+            nome = input("Digite o nome do item:  ")
+            try: 
+                preco = float(input("Digite o preço do item:  "))
+                confeitaria.adicionar_item(nome,  preco)
+            except ValueError: 
+                print("Por favor,  insira um valor válido para o preço.")
+        elif opcao == '2': 
+            nome = input("Digite o nome do item a ser removido:  ")
+            confeitaria.remover_item(nome)
+        elif opcao == '3': 
+            confeitaria.mostrar_menu()
+        elif opcao == '4': 
+            print("Saindo do sistema...")
+            break
+        else: 
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__": 
+    main()
